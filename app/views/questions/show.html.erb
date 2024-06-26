@@ -1,0 +1,7 @@
+<h1>Show de questions</h1>
+
+<p><%= @question.content%></p>
+<p><%= @question.topic %></p>
+
+<%= link_to "Edit question", edit_question_path(@question) %> | 
+<%= link_to "Delete question", question_path(@question), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

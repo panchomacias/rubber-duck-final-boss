@@ -1,0 +1,14 @@
+<%= form_with(model: @question) do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content, autofocus: true %>
+
+  <%= f.label :topic %>
+  <%= f.text_area :topic %>
+
+  <%= f.submit %>
+
+<% end %>
+
+
+

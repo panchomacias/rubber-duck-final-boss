@@ -4,7 +4,7 @@
   <%= f.text_field :content, autofocus: true %>
 
   <%= f.label :topic %>
-  <%= f.text_area :topic %>
+  <%= f.select :topic, Question::TOPIC, prompt: "Pick one" %>
 
   <%= f.submit %>
 

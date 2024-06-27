@@ -1,14 +1,16 @@
 <%= form_with(model: @question) do |f| %>
-
   <%= f.label :content %>
-  <%= f.text_field :content, autofocus: true %>
+  <%= f.text_field :content %>
 
   <%= f.label :topic %>
-  <%= f.select :topic, Question::TOPIC, prompt: "Pick one" %>
+  <%= f.select :topic, options_for_select([
+    ['Python', 'Python'],
+    ['C', 'C'],
+    ['Flask', 'Flask'],
+    ['Algorithms', 'Algorithms'],
+    ['Memory', 'Memory']
+  ]) %>
 
   <%= f.submit %>
-
 <% end %>
-
-
 

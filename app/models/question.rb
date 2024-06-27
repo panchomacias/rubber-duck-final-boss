@@ -1,7 +1,18 @@
 class Question < ApplicationRecord
+  before_save :assign_color
+
   validates :content, :topic, presence: true
 
-  TOPIC = ["Python", "C", "Flask", "Algorithms", "Memory"].sort
+  def assign_color
+    topic_colors = {
+      "Python" => "#FF5733",
+      "C" => "#33FF57",
+      "Flask" => "#3357FF",
+      "Memory" => "#FF33A5",
+      "Algorithms" => "#FF5733",
+      # Añade más tópicos y colores aquí
+    }
 
-  validates :topic, inclusion: {in: TOPIC}
+    self.color = topic_colors[self.topic] || "#000000" # Color por defecto si no se encuentra el tópico
+  end
 end

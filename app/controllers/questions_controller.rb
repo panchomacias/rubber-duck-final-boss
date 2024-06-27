@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+  @questions = Question.all
   end
 
   def show
@@ -44,5 +44,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:content, :topic)
   end
-
 end

@@ -6,6 +6,9 @@
       </span>
       <h2 class="text-md py-2 text-gray-600 text-center">
         <%= "#{index + 1}. Question:" %> <%= link_to(question.content, question, class: "text-blue-500 hover:underline") %>
+        <p>
+         <%= truncate(question.description, length: 20, separator: '') %>
+        </p>
       </h2>
       <hr class="border-t border-gray-300 my-2">
     </div>

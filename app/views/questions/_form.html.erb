@@ -1,16 +1,8 @@
-<%= form_with(model: @question) do |f| %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
 
-  <%= f.label :topic %>
-  <%= f.select :topic, options_for_select([
-    ['Python', 'Python'],
-    ['C', 'C'],
-    ['Flask', 'Flask'],
-    ['Algorithms', 'Algorithms'],
-    ['Memory', 'Memory']
-  ]) %>
 
-  <%= f.submit %>
+<%= simple_form_for @question|f| %>
+  <%= f.input :content, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :topic, hint: 'No special characters.' %>
+  <%= f.input :color, placeholder: 'user@domain.com' %>
+  <%= f.button :submit %>
 <% end %>
-

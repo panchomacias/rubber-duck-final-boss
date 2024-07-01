@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "font-awesome-sass", "~> 6.5.1"
+
+gem "simple_form-tailwind"
